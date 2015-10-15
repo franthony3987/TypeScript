@@ -75,7 +75,7 @@ public class Jackson1Parser extends ModelParser {
             if (jsonSerializer instanceof BeanSerializer) {
                 return new BeanHelper((BeanSerializer) jsonSerializer);
             } else {
-                final String jsonSerializerName = jsonSerializer != null ? jsonSerializer.getClass().getName() : null;
+                final String jsonSerializerName = jsonSerializer.getClass().getName();
                 throw new RuntimeException(String.format("Unknown serializer '%s' for class '%s'", jsonSerializerName, beanClass));
             }
         } catch (JsonMappingException e) {
